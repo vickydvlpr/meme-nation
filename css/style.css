@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+.topbar {
+    background-color: #24292e;
+    color: #f6f6f6;
+    font-family: 'Comic Neue', cursive;
+    display: flex;
+}
+.head-logo {
+    flex: 2;
+}
+.head-logo img {
+    margin-left: 2rem;
+    vertical-align: middle;
+    width: 60px;
+}
+.navbar ul{
+    display: flex;
+}
+.navbar ul li {
+    list-style-type: none;
+    padding: 1rem 2rem;
+}
+.navbar ul a {
+    text-decoration: none;
+    color: #f6f6f6;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+
+@media (max-width: 640px) {
+    .navbar ul{
+        background-color: #24292e;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        bottom: 0;
+        display: block;
+    }
+    .navbar ul li {
+        border-bottom: 1px solid #555555;
+    }
+}
