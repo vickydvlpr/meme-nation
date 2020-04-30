@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
-* {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');* {
     margin: 0;
     padding: 0;
 }
 .topbar {
     background-color: #24292e;
     color: #f6f6f6;
-    font-family: 'Comic Neue', cursive;
+    font-family: 'Montserrat', sans-serif;
     display: flex;
 }
 .head-logo {
@@ -17,77 +16,78 @@
     vertical-align: middle;
     width: 60px;
 }
-.navbar ul{
+
+/* Humberger span */
+.navbar {
     display: flex;
 }
-.navbar ul li {
+.humberger {
+    display: none;
+    cursor: pointer;
+    padding: 1rem 2rem;
+}
+.humberger span {
+    width: 28px;
+    height: 3px;
+    display: block;
+    background-color: #f6f6f6;
+    margin: 6px 0;
+    transition: 0.5s all;
+}
+.humberger.active span:nth-child(1) {
+    
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px) ;
+  transform: rotate(-45deg) translate(-6px, 6px) ;
+}
+.humberger.active span:nth-child(2) {
+    opacity: 0;
+}
+.humberger.active span:nth-child(3) {
+    -webkit-transform: rotate(45deg) translate(-7px, -7px);
+    transform: rotate(45deg) translate(-7px, -7px);
+}
+/* navigation bar */
+
+.navbar .list-items{
+    display: flex;
+}
+.navbar .list-items li {
     list-style-type: none;
     padding: 1rem 2rem;
 }
-.navbar ul a {
+.navbar .list-items li img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+.navbar .list-items a {
     text-decoration: none;
+    vertical-align: middle;
     color: #f6f6f6;
+    font-weight: 600;
     font-size: 1.4rem;
-    font-weight: 700;
-}
-/* meme section */
-.meme-section {
-    width: 80%;
-    margin: 2rem auto;
-}
-.meme-section section label {
-    background-color: #232930;
-    font-size: 1.8rem;
-    color: floralwhite;
-    display: block;
-    padding: 1rem 2rem;
-    
-}
-.memes-card .card{
-    margin: 2rem 0.5rem;
-    width: 250px;
-    height: 250px;
-    position: relative;
-    background-color: #aaaaaa;
-}
-.memes-card .card img {
-    width: 100%;
-    height: 100%;
-}
-.toggle-btn {
-    display: none;
-    
-}
-.memes-card .card:hover .toggle-btn {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.4);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-}
-.memes-card .card:hover .toggle-btn a {
-    text-decoration: none;
-    padding: 8px 12px;
-    background-color: #f6f6f6;
-    border-radius: 20px;
-    margin: 1px;
+    margin-left: 12px;
 }
 
+
 @media (max-width: 640px) {
-    .navbar ul{
+    .humberger {
+        display: block;
+    }
+    .navbar .list-items{
         background-color: #24292e;
-        position: absolute;
+        position: fixed;
         top: 60px;
-        right: 0;
+        right: -300px;
         width: 200px;
         bottom: 0;
         display: block;
+        transition: 0.4s all;
     }
-    .navbar ul li {
+    .navbar .list-items.active {
+        right: 0;
+    }
+    .navbar .list-items li {
         border-bottom: 1px solid #555555;
     }
 }
