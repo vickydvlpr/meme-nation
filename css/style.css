@@ -3,10 +3,10 @@
     padding: 0;
 }
 .topbar {
-    background-color: #24292e;
-    color: #f6f6f6;
+    background-color: #FF8008;
     font-family: 'Montserrat', sans-serif;
     display: flex;
+    box-shadow: 0px 0px 3px #24292e;
 }
 .head-logo {
     flex: 2;
@@ -69,13 +69,52 @@
     margin-left: 12px;
 }
 
-
+/* Section */
+.meme-card {
+    width: 80%;
+    margin: 2rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    display: inline-block;
+    width: 300px;
+    background-color: rgb(227, 240, 240);
+    height: 270px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    margin: 1rem 1rem;
+}
+.card  img{
+    width: 100%;
+    box-sizing: border-box;
+}
+.downloadbtn {
+    display: flex;
+}
+.downloadbtn a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #f6f6f6;
+    background-color: #18aecf;
+    flex: 1;
+    margin: 0rem 0.5rem;
+    transition: 0.3s ease-in;
+    padding: 0.5rem 1rem;
+}
+.downloadbtn a:hover {
+    background-color: #e6670d;
+}   
 @media (max-width: 640px) {
     .humberger {
         display: block;
     }
     .navbar .list-items{
-        background-color: #24292e;
+        background-color: #FF8008;
         position: fixed;
         top: 60px;
         right: -300px;
@@ -88,6 +127,6 @@
         right: 0;
     }
     .navbar .list-items li {
-        border-bottom: 1px solid #555555;
+        border-bottom: 1px solid #cccccc;
     }
 }
