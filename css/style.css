@@ -2,6 +2,12 @@
     margin: 0;
     padding: 0;
 }
+body {
+    background: #acb6e5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
 .topbar {
     background-color: #FF8008;
     font-family: 'Montserrat', sans-serif;
@@ -65,50 +71,153 @@
     vertical-align: middle;
     color: #f6f6f6;
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin-left: 12px;
 }
-
+/* Wrapper class */
+.wrapper-container {
+    width: 1200px;
+    margin: 2rem auto;
+}
 /* Section */
 .meme-card {
-    width: 80%;
-    margin: 2rem auto;
+    display: flex; 
+}
+.card {
+    position: relative;
+}
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.downloadbtn {
+    display: none;
+    flex-wrap: nowrap;
+}
+.downloadbtn .d-btn {
+    flex: 1;
+    padding: 0.5rem;
+    margin: 0rem 0.1rem;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #FF8008;
+    transition: 0.3s ease-in;
+}
+.downloadbtn .d-btn img {
+    vertical-align: middle;
+}
+.downloadbtn .d-btn a {
+    display: inline-block;
+    text-decoration: none;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    padding-left: 8px;
+}
+.d-btn:hover {
+    background-color: rgb(248, 145, 48);
+}
+
+.card:hover .mob-downloadbtn{
+    display: flex;
+}
+/* mobile version doonwlad and share */
+.mob-downloadbtn {
+    transition: 1s all;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.mob-downloadbtn .d-btn {
+    padding: 0.5rem;
+    margin: 0rem 0.8rem;
+    border-radius: 5px;
+    background-color: #FF8008;
+    transition: 0.3s ease-in;
+}
+.mob-downloadbtn .d-btn  img {
+    vertical-align: middle;
+}
+.mob-downloadbtn .d-btn a {
+    display: inline-block;
+    text-decoration: none;
+    color: #f6f6f6;
+    font-size: 18px;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    padding-left: 8px;
+}
+.mob-downloadbtn .d-btn:hover {
+    background-color: rgb(248, 145, 48);
+}
+/* Footer */
+footer {
+    background-color: #050505;
+    padding: 2rem;
+}
+.footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.card {
-    display: inline-block;
-    width: 300px;
-    background-color: rgb(227, 240, 240);
-    height: 270px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    margin: 1rem 1rem;
+section .about-us , .contact-us , .newsletter {
+    padding: 1rem;
+    width: 30%;
 }
-.card  img{
+section .about-us h2, .contact-us h2, .newsletter h2{
+    color: #FF8008;
+    font-family: 'Montserrat', sans-serif;
+}
+/* contact us */
+.contact-us span {
+    display: inline-block;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    color: #f6f6f6;
+    filter: contrast(80%);
+}
+
+/* newbox */
+section .news-box {
+    margin-top: 1rem;
+}
+section .news-box input {
     width: 100%;
     box-sizing: border-box;
+    padding: 12px;
 }
-.downloadbtn {
-    display: flex;
-}
-.downloadbtn a {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-align: center;
-    text-transform: uppercase;
+section .news-box a {
     text-decoration: none;
-    color: #f6f6f6;
-    background-color: #18aecf;
-    flex: 1;
-    margin: 0rem 0.5rem;
-    transition: 0.3s ease-in;
-    padding: 0.5rem 1rem;
+    background-color: #095d70;
+    display: block;
+    margin-top: 8px;
+    padding: 8px;
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 1px;
+    transition: 0.3s all;
 }
-.downloadbtn a:hover {
-    background-color: #e6670d;
-}   
+section .news-box a:hover {
+    background-color: #18aecf;
+}
+section .about-us p, .contact-us p, .newsletter p{
+    margin-top: 2rem;
+    color: #fafafa;
+    filter: contrast(60%);
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-family: sans-serif;
+}
 @media (max-width: 640px) {
     .humberger {
         display: block;
@@ -117,6 +226,7 @@
         background-color: #FF8008;
         position: fixed;
         top: 60px;
+        z-index: 55;
         right: -300px;
         width: 200px;
         bottom: 0;
@@ -128,5 +238,22 @@
     }
     .navbar .list-items li {
         border-bottom: 1px solid #cccccc;
+    }
+    .footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer div {
+        width: 100%;
+    } 
+    .downloadbtn {
+        display: flex;
+    }
+    .mob-downloadbtn {
+        display: none;
+    }
+    .card:hover .mob-downloadbtn{
+        display: none;
     }
 }
